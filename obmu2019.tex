@@ -1,0 +1,119 @@
+\documentclass[12pt,oneside,a4paper]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[brazilian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[margin=2cm]{geometry}
+% \usepackage[parfill]{parskip} % no indentation
+\setlength{\parskip}{12pt} % redimensiona o tamanho do espaçamento entre parágrafos
+
+\begin{document}
+5. Calcule o resultado da seguinte soma: 
+\begin{equation*}
+\sum_{n=1}^{\infty}\frac{2}{4n^{2}+8n+3}
+\end{equation*}
+
+Solução:
+
+Fatore o denominador:
+\begin{equation*}
+4n^{2}+8n+3=(2n+1)(2n+3)
+\end{equation*}
+
+Separe em frações parciais:
+\begin{equation*}
+\frac{2}{4n^{2}+8n+3}=\frac{A}{2n+1}+\frac{B}{2n+3}
+\end{equation*}
+
+Ao resolver:
+\begin{equation*}
+2=A(2n+3)+B(2n+1)
+\end{equation*}
+\begin{equation*}
+2=(2A+2B)n+(3A+B)
+\end{equation*}
+
+É possível formar o sistema linear:
+\begin{equation*}
+\begin{cases}
+2A + 2B = 0 \\
+3A + B = 2
+\end{cases}
+\end{equation*}
+
+De onde se encontra que: $A=1$ e $B=-1$
+
+Assim,
+\begin{equation*}
+\frac{2}{4n^{2}+8n+3}=\frac{1}{2n+1}-\frac{1}{2n+3}
+\end{equation*}
+
+A soma torna-se:
+\begin{equation*}
+\sum_{n=1}^{\infty}\left(\frac{1}{2n+1}-\frac{1}{2n+3}\right)
+\end{equation*}
+
+Calcule os primeiros termos:
+\begin{equation*}
+=\left(\frac{1}{3}-\frac{1}{5}\right)+\left(\frac{1}{5}-\frac{1}{7}\right)+\left(\frac{1}{7}-\frac{1}{9}\right)+\cdots
+\end{equation*}
+
+Todos os termos se anulam, exceto pelo primeiro. Portanto:
+\begin{equation*}
+=\frac{1}{3}
+\end{equation*}
+\pagebreak
+
+18. Calcule
+\begin{equation*}
+\int_{1}^{2}\frac{e^{x}\left(x-1\right)}{x\left(x+e^{x}\right)}\;dx
+\end{equation*}
+
+Solução:
+
+Note que
+\begin{equation*}
+\frac{d}{dx}\ln{x}=\frac{1}{x}
+\end{equation*}
+
+E do termo em parênteses do denominador,
+\begin{equation*}
+\frac{d}{dx}\ln{\left(x+e^{x}\right)}=\frac{1+e^{x}}{x+e^{x}}
+\end{equation*}
+
+A diferença entre esses diferenciais resulta em:
+\begin{equation*}
+\frac{d}{dx}\left(\ln{\left(x+e^{x}\right)}-\ln{x}\right)=\frac{1+e^{x}}{x+e^{x}}-\frac{1}{x}
+\end{equation*}
+
+Desenvolva em denominador comum:
+\begin{equation*}
+=\frac{x\left(1+e^{x}\right)-\left(x+e^{x}\right)}{x\left(x+e^{x}\right)}
+\end{equation*}
+
+Simplifique o numerador:
+\begin{equation*}
+x+xe^{x}-x-e^{x}=xe^{x}-e^{x}=e^{x}\left(x-1\right)
+\end{equation*}
+
+Portanto,
+\begin{equation*}
+\frac{d}{dx}\left(\ln{\left(x+e^{x}\right)}-\ln{x}\right)=\frac{e^{x}\left(x-1\right)}{x\left(x+e^{x}\right)}
+\end{equation*}
+
+Pela propriedade da diferença entre logaritmos,
+\begin{equation*}
+\frac{d}{dx}\left(\ln{\frac{x+e^{x}}{x}}\right)=\frac{e^{x}\left(x-1\right)}{x\left(x+e^{x}\right)}
+\end{equation*}
+
+Ao integrar,
+\begin{equation*}
+\int_{1}^{2}\frac{e^{x}\left(x-1\right)}{x\left(x+e^{x}\right)}\;dx=\left[\ln{\frac{x+e^{x}}{x}}\right]_{1}^{2}
+\end{equation*}
+
+\begin{equation*}
+=\ln{\frac{2+e^{2}}{2}}-\ln{\left(1+e\right)}=\ln{\frac{2+e^{2}}{2\left(1+e\right)}}=\ln{\frac{2+e^{2}}{2+2e}}
+\end{equation*}
+
+\end{document}
